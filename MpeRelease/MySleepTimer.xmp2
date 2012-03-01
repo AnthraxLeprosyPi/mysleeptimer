@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>2.0</Version>
+  <Groups>
+    <Items>
+      <GroupItem Name="Default">
+        <ParentGroup />
+        <DisplayName>Default</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Default</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\MySleepTimer\bin\Release\MySleepTimer.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{23cd779d-aafa-4bc8-80ae-999fc60ebee4}-MySleepTimer.dll</ZipFileName>
+              <DestinationFilename>%Plugins%\process\MySleepTimer.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="GenericSkinFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\MySleepTimer\img\MySleepTimer_enabled.png</LocalFileName>
+              <ZipFileName>Installer{GenericSkinFile}\{1eae909a-508f-4c2a-84a3-dc3ea79b3d86}-MySleepTimer_enabled.png</ZipFileName>
+              <DestinationFilename>%Skin%\[DEFAULT]\Media\MySleepTimer_enabled.png</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+    </Items>
+  </Groups>
+  <Sections>
+    <Items>
+      <SectionItem Guid="7d214f70-ef9e-45e2-b567-a9bcc3921f1f" Name="Welcome Screen" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header text">
+              <Value>Welcome to the Extension Installer for [Name]</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Description">
+              <Value>This will install [Name] version [Version] on your computer.
+It is recommended that you close all other applications before continuing.
+Click Next to continue or Cancel to exit Setup.</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Left part image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Welcome Screen</PanelName>
+        <WizardButtonsEnum>NextCancel</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="9bcdd6ec-a0e1-4660-a4f1-da7eac9f64db" Name="Install Section" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header Title">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Header title</Description>
+            </SectionParam>
+            <SectionParam Name="Header description">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Description of section, shown in under section title</Description>
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items>
+            <ActionItem Name="InstallFiles" ActionType="InstallFiles" ConditionGroup="">
+              <Params>
+                <Items />
+              </Params>
+              <ExecuteLocation>AfterPanelShow</ExecuteLocation>
+            </ActionItem>
+          </Items>
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Install Section</PanelName>
+        <WizardButtonsEnum>Next</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="6d1f688f-c543-4341-b133-9b81df81f8b5" Name="Setup Complete" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header text">
+              <Value>The Extension Installer Wizard has successfully installed [Name].</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Left part image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Setup Complete</PanelName>
+        <WizardButtonsEnum>Finish</WizardButtonsEnum>
+      </SectionItem>
+    </Items>
+  </Sections>
+  <Dependencies>
+    <Items>
+      <DependencyItem>
+        <Type>MediaPortal</Type>
+        <Id />
+        <MinVersion>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
+        </MinVersion>
+        <MaxVersion>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
+        </MaxVersion>
+        <WarnOnly>false</WarnOnly>
+        <Message>requires MediaPortal version 1.1.6.27644 to 1.1.6.27644.</Message>
+        <Name>MediaPortal</Name>
+      </DependencyItem>
+    </Items>
+  </Dependencies>
+  <PluginDependencies>
+    <Items>
+      <PluginDependencyItem AssemblyName="MySleepTimer.dll">
+        <CompatibleVersion>
+          <Items>
+            <CompatibleVersionItem>
+              <MinRequiredVersion>1.1.7.0</MinRequiredVersion>
+              <DesignedForVersion>1.1.7.0</DesignedForVersion>
+            </CompatibleVersionItem>
+          </Items>
+        </CompatibleVersion>
+        <SubSystemsUsed>
+          <Items />
+        </SubSystemsUsed>
+      </PluginDependencyItem>
+    </Items>
+  </PluginDependencies>
+  <GeneralInfo>
+    <Name>MySleepTimer</Name>
+    <Id>05afd608-7fb0-4738-85b3-250bb8e521a6</Id>
+    <Author>Team MediaPortal, Anthrax (thx Chefkoch)</Author>
+    <HomePage>http://forum.team-mediaportal.com/MySleepTimer-t47353.html</HomePage>
+    <ForumPage>http://forum.team-mediaportal.com/MySleepTimer-t47353.html</ForumPage>
+    <UpdateUrl>http://mp-plugins.svn.sourceforge.net/viewvc/mp-plugins/trunk/plugins/MySleepTimer/MpeRelease/update.xml</UpdateUrl>
+    <Version>
+      <Major>1</Major>
+      <Minor>0</Minor>
+      <Build>6</Build>
+      <Revision>0</Revision>
+    </Version>
+    <ExtensionDescription>If you want to set a sleeptime by simply pressing a remote button, this plugin is what you are searching for.
+
+It is possible to define the steps which are used to set the sleeptime and detects the remaining playback time if a media is played while you pressed the sleeptimer button.
+
+If you are using IRSS, there will be NO need to configure the remote button mapping within MP, since IRSS detects the sleeptimer plugin and always sends the yellow button if the plugin is found,</ExtensionDescription>
+    <VersionDescription>added support for MediaPortal 1.2.1.0 final</VersionDescription>
+    <DevelopmentStatus>Stable</DevelopmentStatus>
+    <OnlineLocation>http://mp-plugins.svn.sourceforge.net/viewvc/mp-plugins/trunk/plugins/MySleepTimer/MpeRelease/MySleepTimer.mpe1</OnlineLocation>
+    <ReleaseDate>2011-11-19T00:54:51</ReleaseDate>
+    <Tags>standby, suspend, sleeptimer, sleep</Tags>
+    <Location>D:\Anthrax-Leprosy-Pi\Documents\Development\Projekte\MediaPortal\MySleepTimer\MpeRelease\MySleepTimer.mpe1</Location>
+    <Params>
+      <Items>
+        <SectionParam Name="Icon">
+          <Value>..\MySleepTimer\img\MySleepTimer_enabled.png</Value>
+          <ValueType>File</ValueType>
+          <Description>The icon file of the package (jpg,png,bmp)</Description>
+        </SectionParam>
+        <SectionParam Name="Online Icon">
+          <Value>http://mp-plugins.svn.sourceforge.net/viewvc/mp-plugins/trunk/plugins/MySleepTimer/MySleepTimer/img/MySleepTimer_enabled.png</Value>
+          <ValueType>String</ValueType>
+          <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
+        </SectionParam>
+        <SectionParam Name="Configuration file">
+          <Value>%Plugins%\process\MySleepTimer.dll</Value>
+          <ValueType>Template</ValueType>
+          <Description>The file used to configure the extension.
+ If have .exe extension the will be executed
+ If have .dll extension used like MP plugin configuration</Description>
+        </SectionParam>
+        <SectionParam Name="Online Screenshots">
+          <Value />
+          <ValueType>String</ValueType>
+          <Description>Online stored screenshot urls separated by ; </Description>
+        </SectionParam>
+        <SectionParam Name="Force to uninstall on update">
+          <Value>yes</Value>
+          <ValueType>Bool</ValueType>
+          <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
+        </SectionParam>
+      </Items>
+    </Params>
+  </GeneralInfo>
+  <UniqueFileList>
+    <Items>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\MySleepTimer\bin\Release\MySleepTimer.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{23cd779d-aafa-4bc8-80ae-999fc60ebee4}-MySleepTimer.dll</ZipFileName>
+        <DestinationFilename>%Plugins%\process\MySleepTimer.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="GenericSkinFile" SystemFile="true" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\MySleepTimer\img\MySleepTimer_enabled.png</LocalFileName>
+        <ZipFileName>Installer{GenericSkinFile}\{1eae909a-508f-4c2a-84a3-dc3ea79b3d86}-MySleepTimer_enabled.png</ZipFileName>
+        <DestinationFilename>%Skin%\[DEFAULT]\Media\MySleepTimer_enabled.png</DestinationFilename>
+      </FileItem>
+    </Items>
+  </UniqueFileList>
+  <ProjectSettings>
+    <FolderGroups />
+    <ProjectFilename>MySleepTimer.xmp2</ProjectFilename>
+    <UpdatePath1>D:\Anthrax-Leprosy-Pi\Documents\Development\Projekte\MediaPortal\MySleepTimer\MpeRelease\update.xml</UpdatePath1>
+    <UpdatePath2 />
+    <UpdatePath3 />
+  </ProjectSettings>
+  <IsSkin>false</IsSkin>
+</PackageClass>

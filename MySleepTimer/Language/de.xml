@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- MyAlarm translation file -->
+<!-- German (de) -->
+<!-- Note: English is the fallback for any strings not found in other languages -->
+<strings>
+  <!-- P -->
+  <string Field="PluginDescription">Schläfst auch du beim Fernsehen ständig ein? Dann brauchst du dieses Plugin, welches MediaPortal automatisch nach einer bestimmten Zeit ausschaltet.</string>
+  <!-- S -->
+  <string Field="SleepingInXMin">Autom. Ausschalten in {0} min.</string>
+  <string Field="SleepingInXMinPlaytime">Autom. Ausschalten in {0} min. (restl. Wiedergabezeit)</string>
+  <string Field="SleepTimer">Automatisches Ausschalten</string>
+  <!-- T -->
+  <string Field="TimeIsUp">Es ist Schlafenszeit! Gute Nacht.</string>
+  <string Field="TimerStopped">Sleeptimer ausgeschaltet!</string>
+</strings>

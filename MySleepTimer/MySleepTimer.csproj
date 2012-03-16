@@ -40,7 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -53,55 +53,58 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Common.Utils">
-      <HintPath>dll\Common.Utils.dll</HintPath>
+      <HintPath>Resources\dll\Common.Utils.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Core">
-      <HintPath>dll\Core.dll</HintPath>
+      <HintPath>Resources\dll\Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Dialogs">
-      <HintPath>dll\Dialogs.dll</HintPath>
+      <HintPath>Resources\dll\Dialogs.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Stateless, Version=2.3.1.1, Culture=neutral, PublicKeyToken=93038f0927583c9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\dll\Stateless.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Utils">
-      <HintPath>dll\Utils.dll</HintPath>
+      <HintPath>Resources\dll\Utils.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="WindowPlugins">
-      <HintPath>dll\WindowPlugins.dll</HintPath>
+      <HintPath>Resources\dll\WindowPlugins.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Translation.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="MySleepTimer.cs">
-    </Compile>
-    <Compile Include="MySleepTimerConfig.cs">
+    <Compile Include="Plugin\Configuration\MySleepTimerConfig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MySleepTimerConfig.Designer.cs">
+    <Compile Include="Plugin\Configuration\MySleepTimerConfig.Designer.cs">
       <DependentUpon>MySleepTimerConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Plugin\Configuration\Settings.cs" />
+    <Compile Include="Plugin\Window\MySleepTimer.cs" />
+    <Compile Include="Plugin\Window\MySleepTimerOld.cs" />
+    <Compile Include="Plugin\Window\Translation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MySleepTimerConfig.resx">
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="Plugin\Configuration\MySleepTimerConfig.resx">
       <DependentUpon>MySleepTimerConfig.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="img\MySleepTimer_disabled.png" />
-    <EmbeddedResource Include="img\MySleepTimer_enabled.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -131,7 +134,25 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Language\de.xml" />
+    <Content Include="Extension\Forum\MySleepTimer_01.png" />
+    <Content Include="Extension\Forum\MySleepTimer_02.png" />
+    <Content Include="Extension\Forum\MySleepTimer_03.png" />
+    <Content Include="Extension\Forum\MySleepTimer_04.png" />
+    <Content Include="Extension\Forum\MySleepTimer_logo.png" />
+    <Content Include="Extension\Installer\update.xml" />
+    <Content Include="Language\de.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Resources\img\MySleepTimer_disabled.png" />
+    <EmbeddedResource Include="Resources\img\MySleepTimer_enabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\dll\" />
+    <Folder Include="Skin\Media\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Extension\Installer\MySleepTimer.mpe1" />
+    <None Include="Extension\Installer\MySleepTimer.xmp2" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -143,12 +164,6 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>REM xcopy "$(TargetPath)" "..\..\..\MpiRelease" /Y
-REM xcopy "$(TargetPath)" "C:\Programme\Team MediaPortal\MediaPortal\plugins\Windows" /Y
-
-
-REM Use the following when project is added to MP solution
-if not $(SolutionName)!==MediaPortal! goto NO_MP
-xcopy "$(TargetPath)" "$(SolutionDir)xbmc\bin\$(ConfigurationName)\plugins\process" /Y
-:NO_MP</PostBuildEvent>
+xcopy "$(TargetPath)" "C:\Program Files (x86)\Team MediaPortal\MediaPortal\plugins\Windows" /Y</PostBuildEvent>
   </PropertyGroup>
 </Project>

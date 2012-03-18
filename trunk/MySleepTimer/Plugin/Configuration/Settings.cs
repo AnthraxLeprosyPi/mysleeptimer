@@ -56,7 +56,7 @@ namespace MySleepTimer.Plugin.Configuration {
             SleepTimeMaxium = 120;
             SleepTimeStep = 10;
             NotifyBeforeSleep = 3;
-            NotifyTimeOutMs = 3 * 1000;
+            NotifyTimeOutMs = 3;
         }
 
         #endregion
@@ -99,7 +99,7 @@ namespace MySleepTimer.Plugin.Configuration {
                 SleepTimeMaxium = xmlReader.GetValueAsInt(PLUGIN_NAME, "Maximum", 120);
                 SleepTimeStep = xmlReader.GetValueAsInt(PLUGIN_NAME, "Step", 10);
                 NotifyBeforeSleep = xmlReader.GetValueAsInt(PLUGIN_NAME, "NotifyBeforeSleep", 3);
-                NotifyTimeOutMs = xmlReader.GetValueAsInt(PLUGIN_NAME, "NotifyTimeOut", 3) * 1000;
+                NotifyTimeOutMs = xmlReader.GetValueAsInt(PLUGIN_NAME, "NotifyTimeOut", 3);
             }
 
             WriteToLog();

@@ -119,7 +119,9 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Params>
           <Items>
             <SectionParam Name="Header text">
-              <Value>The Extension Installer Wizard has successfully installed [Name].</Value>
+              <Value>The Extension Installer Wizard has successfully installed [Name].
+
+PLEASE REMOVE OLD %Plugins%\Process\MySleepTimer.dll</Value>
               <ValueType>String</ValueType>
               <Description />
             </SectionParam>
@@ -190,22 +192,22 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <Author>Team MediaPortal, Anthrax (thx Chefkoch)</Author>
     <HomePage>http://www.team-mediaportal.com/extensions/system/mysleeptimer</HomePage>
     <ForumPage>http://forum.team-mediaportal.com/threads/mysleeptimer.47353/</ForumPage>
-    <UpdateUrl>http://mp-plugins.svn.sourceforge.net/viewvc/mp-plugins/trunk/plugins/MySleepTimer/MySleepTimer/Extension/Installer/update.xml</UpdateUrl>
+    <UpdateUrl>https://mysleeptimer.googlecode.com/svn/trunk/MySleepTimer/Extension/Installer/update.xml</UpdateUrl>
     <Version>
       <Major>2</Major>
       <Minor>0</Minor>
-      <Build>0</Build>
+      <Build>1</Build>
       <Revision>0</Revision>
     </Version>
-    <ExtensionDescription>If you want to set a sleeptime by simply pressing a remote button, this plugin is what you are searching for.
-
-It is possible to define the steps which are used to set the sleeptime and detects the remaining playback time if a media is played while you pressed the sleeptimer button.
-
+    <ExtensionDescription>If you want to set a sleeptime by simply pressing a remote button, this plugin is what you are searching for.
+
+It is possible to define the steps which are used to set the sleeptime and detects the remaining playback time if a media is played while you pressed the sleeptimer button.
+
 If you are using IRSS, there will be NO need to configure the remote button mapping within MP, since IRSS detects the sleeptimer plugin and always sends the yellow button if the plugin is found,</ExtensionDescription>
-    <VersionDescription>added support for MediaPortal 1.2.2.0 final</VersionDescription>
+    <VersionDescription>added support for MediaPortal 1.2.2.0 final, fixed inpersistent config setting</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://mp-plugins.svn.sourceforge.net/viewvc/mp-plugins/trunk/plugins/MySleepTimer/MySleepTimer/Extension/Installer/MySleepTimer.mpe1</OnlineLocation>
-    <ReleaseDate>2012-03-16T00:54:51</ReleaseDate>
+    <OnlineLocation>https://mysleeptimer.googlecode.com/svn/trunk/MySleepTimer/Extension/Installer/MySleepTimer.mpe1</OnlineLocation>
+    <ReleaseDate>2012-03-18T00:54:51</ReleaseDate>
     <Tags>standby, suspend, sleeptimer, sleep</Tags>
     <Location>D:\Anthrax-Leprosy-Pi\Documents\Development\Projekte\MediaPortal\MySleepTimer\MySleepTimer\Extension\Installer\MySleepTimer.mpe1</Location>
     <Params>

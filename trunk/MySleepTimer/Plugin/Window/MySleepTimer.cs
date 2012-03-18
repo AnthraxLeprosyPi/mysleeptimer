@@ -368,7 +368,6 @@ namespace MySleepTimer.Plugin {
 
         private void ShowNotifyDialog(int timeOutMs, string notifyMessage) {
             try {
-                timeOutMs /= 1000; //to seconds
                 GUIDialogNotify _dialogSleepTimerNotify = (GUIDialogNotify)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_NOTIFY);
                 _dialogSleepTimerNotify.TimeOut = timeOutMs;
                 _dialogSleepTimerNotify.SetImage(GUIGraphicsContext.Skin + @"\Media\MySleepTimer_enabled.png");
